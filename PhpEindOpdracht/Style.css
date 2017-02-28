@@ -1,0 +1,7 @@
+.popup1 {
+    width: 400px;
+    visibility: hidden;
+}
+.popup1.active{
+    visibility: visible;
+}
