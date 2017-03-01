@@ -1,7 +1,22 @@
-.popup1 {
-    width: 400px;
-    visibility: hidden;
+.login-box {
+    background-color: rgba(255,255,255,0.8);
+    align-content: center;
+    align-self: center;
+    width: 350px;
+    height: 300px;
+    padding: 2%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 25px;
 }
-.popup1.active{
-    visibility: visible;
+.img{
+    min-width: 100%;
+    background-image: url("login.jpg");
+}
+.admin-tables {
+    height: 300px;
+    width: auto;
+    overflow: auto;
 }

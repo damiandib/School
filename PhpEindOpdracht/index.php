@@ -1,4 +1,6 @@
-<?php session_start(); ?>
+<?php session_start();
+$logged_in = $_SESSION['logged_in']
+?>
 <!DOCTYPE html>
 
 <html>
@@ -13,12 +15,11 @@
 </head>
 <body>
 <?php
-// Variables
-$logged_in = false;
+// Variabelen
 $connection;
 
-// Functions
-// Initializes the connection to the database
+// Functies
+// Maakt verbinding met de database
 function db_initialization()
 {
     $servername = '127.0.0.1';
@@ -26,47 +27,23 @@ function db_initialization()
     $password = 'root';
     $db = 'john_mayer';
     global $connection;
-    // Create connection
+    // Maakt verbinding
     $connection = new mysqli($servername, $username, $password, $db);
 
-    // Check connection
+    // Controleerd de verbinding
     if (!$connection) {
         die('Connection failed: ' . mysqli_connect_error());
     }
 }
 
-// Checks if you've filled in a username and password
-if (isset($_POST['username'], $_POST['password'])) {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
 
-    if ($username == '' || $password == '') {
-        echo 'Username or password is empty';
-    } else {
-        db_initialization();
-        $query = "SELECT * FROM `users` WHERE username='$username' AND password = '$password'";
-
-        $result = mysqli_query($connection, $query);
-        if (!$result) {
-            printf("Error: %s\n", mysqli_error($connection));
-            exit();
-        }
-
-        $row = mysqli_fetch_array($result);
-
-        if (!$row) {
-            echo 'Invalid username/password please try again';
-        } else {
-            echo 'Log in successfull';
-            $logged_in = true;
-            $_SESSION['name'] = $username;
-        }
-    }
-}
-//Visible on the site
+//Zichtbaar op de website
 ?>
-<a class="btn waves-effect waves-light" href="login.php" name="action">Login</a>
+<a class="btn waves-effect waves-light" href="login.php" name="action">Inloggen</a>
 <div class="container">
+    <div class="row">
+        <h6>Welkom op de date pagina van john mayer, hier kunt u de 5 meest recente datings partners zien van hem</h6>
+    </div>
     <div class="row">
         <h5>Daarmee is john nu aan het daten</h5>
         <table class="bordered col s8">
@@ -80,16 +57,14 @@ if (isset($_POST['username'], $_POST['password'])) {
             </thead>
             <tbody>
             <?php
-            //Haalt de data uit de database
+            // Haalt de data uit de database
             db_initialization();
             $sqlquery = 'SELECT Plaats, Vriendin, Datum, Tijd FROM `women` ORDER BY Datum DESC, Tijd DESC LIMIT 5';
-            $number = 0;
             if ($result = mysqli_query($connection, $sqlquery)) {
                 //Haalt de $result opnieuw op
                 $result = mysqli_query($connection, $sqlquery);
                 //Haalt elke rij op in de database en zet het op het scherm doormiddel van een printf
                 while ($row = mysqli_fetch_row($result)) {
-                    //printf('<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>', $row[1], $row[2], $row[3], $row[4]);
                     echo '<tr>';
                     for ($i = 0; $i < count($row); $i++) {
                         echo '<td>' . $row[$i] . '</td>';
@@ -102,6 +77,53 @@ if (isset($_POST['username'], $_POST['password'])) {
             </tbody>
         </table>
     </div>
+    <div class="row">
+        <form method="post" class="col s12">
+            <div class="row">
+                <div class="input-field col s4">
+                    <input type="text" name="place" id="place">
+                    <label for="place">Plaats</label>
+                </div>
+                <div class="input-field col s4">
+                    <input type="text" name="name" id="name">
+                    <label for="name">Naam</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s2">
+                    <input type="date" name="date" id="date">
+                </div>
+                <div class="input-field col s2">
+                    <input type="time" name="time" id="time">
+                </div>
+                <div class="input-field col s1">
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Invoeren
+                    </button>
+                </div>
+                <?php
+                if (isset($_POST['place'], $_POST['name'], $_POST['date'], $_POST['time'])) {
+                    $place = ($_POST['place'] ? $_POST['place'] : 'Unknown');
+                    $name = ($_POST['name'] ? $_POST['name'] : 'Unknown');
+                    $date = ($_POST['date'] ? $_POST['date'] : NULL);
+                    $time = ($_POST['time'] ? $_POST['time'] : NULL);
+                    $sqliquery = "INSERT INTO `women` (`Sgtnr`, `Plaats`, `Vriendin`, `Datum`, `Tijd`) VALUES (NULL, '$place', '$name', '$date', '$time')";
+                    if (mysqli_query($connection, $sqliquery) && $logged_in == true) {
+                        echo 'Inserted successfully';
+                        header('Location:index.php');
+                    } else {
+                        echo "U bent niet ingelogd of er is iets mis met de server";
+                    }
+                }
+                ?>
+            </div>
+        </form>
+    </div>
 </div>
+<script>
+    $('.datepicker').pickadate({
+        selectMonths: true,
+        selectYears: 15
+    });
+</script>
 </body>
 </html>
