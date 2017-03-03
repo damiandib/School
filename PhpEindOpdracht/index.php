@@ -1,5 +1,7 @@
 <?php session_start();
-$logged_in = $_SESSION['logged_in']
+if(isset($_SESSION['logged_in']))
+{}
+else{$_SESSION['logged_in'] = 'false';}
 ?>
 <!DOCTYPE html>
 
@@ -107,9 +109,10 @@ function db_initialization()
                     $date = ($_POST['date'] ? $_POST['date'] : NULL);
                     $time = ($_POST['time'] ? $_POST['time'] : NULL);
                     $sqliquery = "INSERT INTO `women` (`Sgtnr`, `Plaats`, `Vriendin`, `Datum`, `Tijd`) VALUES (NULL, '$place', '$name', '$date', '$time')";
-                    if (mysqli_query($connection, $sqliquery) && $logged_in == true) {
+                    if ($_SESSION['logged_in'] == 'true') {
+                        mysqli_query($connection, $sqliquery);
                         echo 'Inserted successfully';
-                        header('Location:index.php');
+                        echo "<meta http-equiv='refresh' content='0;url=admin.php'>";
                     } else {
                         echo "U bent niet ingelogd of er is iets mis met de server";
                     }
@@ -119,11 +122,4 @@ function db_initialization()
         </form>
     </div>
 </div>
-<script>
-    $('.datepicker').pickadate({
-        selectMonths: true,
-        selectYears: 15
-    });
-</script>
-</body>
 </html>

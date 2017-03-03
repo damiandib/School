@@ -54,7 +54,6 @@ function db_initialization()
                     <tbody>
                     <?php
                     // Controleerd of er een gebruiker is ingelogd en of de gebruiken troy carter is
-
                     db_initialization();
                     $sqlquery = 'SELECT Sgtnr, Plaats, Vriendin, Datum, Tijd FROM `women` ORDER BY Datum DESC, Tijd DESC';
                     if ($result = mysqli_query($connection, $sqlquery)) {
@@ -75,12 +74,11 @@ function db_initialization()
                         $sqlquery = "DELETE FROM `women` WHERE Sgtnr = '$number'";
                         if (mysqli_query($connection, $sqlquery)) {
                             echo "Data met het id: $number is verwijderd";
-                            header('Location:admin.php');
+                            echo "<meta http-equiv='refresh' content='0;url=admin.php'>";
                         } else {
                             die(mysqli_error($connection));
                         }
                     }
-
                     ?>
                     </tbody>
                 </table>

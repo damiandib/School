@@ -2,8 +2,8 @@
     background-color: rgba(255,255,255,0.8);
     align-content: center;
     align-self: center;
-    width: 350px;
-    height: 300px;
+    width: 400px;
+    min-height: 300px;
     padding: 2%;
     position: absolute;
     top: 50%;
@@ -14,9 +14,15 @@
 .img{
     min-width: 100%;
     background-image: url("login.jpg");
+    background-size: cover;
 }
 .admin-tables {
     height: 300px;
     width: auto;
     overflow: auto;
+}
+/* invalid color */
+.input-field input[type=text].invalid {
+    border-bottom: 1px solid red;
+    box-shadow: 0 1px 0 0 #000;
 }

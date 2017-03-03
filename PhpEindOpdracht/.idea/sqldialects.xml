@@ -4,5 +4,6 @@
     <file url="file://$PROJECT_DIR$/admin.php" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/index.php" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/login.php" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/register.php" dialect="MySQL" />
   </component>
 </project>

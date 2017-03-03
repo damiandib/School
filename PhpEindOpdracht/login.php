@@ -37,11 +37,11 @@ function db_initialization()
             <div class="login-box">
                 <div class="input-field col s12">
                     <input id="username" name="username" type="text" class="validate">
-                    <label for="username">Username</label>
+                    <label for="username">E-mail Address</label>
                 </div>
                 <div class="input-field col s12">
                     <input id="password" name="password" type="password" class="validate">
-                    <label for="password">Password</label>
+                    <label for="password">Wachtwoord</label>
                 </div>
                 <?php
                 // Checks if you've filled in a username and password
@@ -64,24 +64,27 @@ function db_initialization()
 
                         if (!$row) {
                             echo 'Invalid username/password please try again';
+                            $logged_in = 'false';
+                            $_POST['logged_in'] = $logged_in;
                         } else {
                             echo 'Log in successfull';
                             global $logged_in;
-                            $logged_in = true;
+                            $logged_in = 'true';
                             $_SESSION['name'] = $username;
                             $_SESSION['logged_in'] = $logged_in;
                             if ($username == 'troycarter@hotmail.com') {
-                                header("Location:admin.php");
+                                echo "<meta http-equiv='refresh' content='0;url=admin.php'>";
                             } else {
-                                header("Location:index.php");
+                                echo "<meta http-equiv='refresh' content='0;url=index.php'>";
                             }
                         }
                     }
                 }
                 ?>
-                <div class="center-align input-field col s12">
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Login
+                <div class="input-field col s12">
+                    <button class="left-align btn waves-effect waves-light" type="submit" name="action">Inloggen
                     </button>
+                    <a class="right-align btn waves-effect waves-light" href="register.php" name="action">Registeren</a>
                 </div>
             </div>
         </form>
