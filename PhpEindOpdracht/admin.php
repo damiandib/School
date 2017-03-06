@@ -3,7 +3,33 @@ $username = $_SESSION['name'];
 $logged_in = $_SESSION['logged_in'];
 if ($logged_in && $username == 'troycarter@hotmail.com') {
 } else {
-    header('Location:index.php');
+    echo "<meta http-equiv='refresh' content='0;url=index.php'>";
+}
+function db_initialization()
+{
+    $servername = '10.3.0.115';
+    $username = 'h07_bas';
+    $password = 'pom1pom2';
+    $db = 'h07_johnmayer';
+    global $connection;
+    // Maakt verbinding
+    $connection = new mysqli($servername, $username, $password, $db);
+
+    // Controleerd de verbinding
+    if (!$connection) {
+        die('Connection failed: ' . mysqli_connect_error());
+    }
+}
+if (isset($_POST['number'])) {
+    db_initialization();
+    $number = $_POST['number'];
+    $sqlquery = "DELETE FROM `women` WHERE Sgtnr = '$number'";
+    if (mysqli_query($connection, $sqlquery)) {
+        $message =  "Data met het id: $number is verwijderd";
+        //echo "<meta http-equiv='refresh' content='0;url=admin.php'>";
+    } else {
+        die(mysqli_error($connection));
+    }
 }
 ?>
 <html>
@@ -17,23 +43,6 @@ if ($logged_in && $username == 'troycarter@hotmail.com') {
             src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
 </head>
 <body>
-<?php
-function db_initialization()
-{
-    $servername = '127.0.0.1';
-    $username = 'root';
-    $password = 'root';
-    $db = 'john_mayer';
-    global $connection;
-    // Maakt verbinding
-    $connection = new mysqli($servername, $username, $password, $db);
-
-    // Controleerd de verbinding
-    if (!$connection) {
-        die('Connection failed: ' . mysqli_connect_error());
-    }
-}
-?>
 <a href="index.php"><button class="btn waves-effect waves-light" type="button" name="action">Home
     </button></a>
 <div class="container">
@@ -69,28 +78,21 @@ function db_initialization()
                         }
                         mysqli_free_result($result);
                     }
-                    if (isset($_POST['number'])) {
-                        $number = $_POST['number'];
-                        $sqlquery = "DELETE FROM `women` WHERE Sgtnr = '$number'";
-                        if (mysqli_query($connection, $sqlquery)) {
-                            echo "Data met het id: $number is verwijderd";
-                            echo "<meta http-equiv='refresh' content='0;url=admin.php'>";
-                        } else {
-                            die(mysqli_error($connection));
-                        }
-                    }
+
                     ?>
                     </tbody>
                 </table>
             </div>
             <div class="row">
                 <div class="input-field col s1">
-                    <input name="number" type="number" class="validate">
+                    <input name="number" id="number" type="number" class="validate">
+                    <label for="number">ID</label>
                 </div>
                 <div class="input-field col s2">
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Delete
+                    <button class="btn waves-effect waves-light" id="delete" type="submit" name="action">Delete
                     </button>
                 </div>
+                <?php echo $message ?>
             </div>
         </form>
     </div>

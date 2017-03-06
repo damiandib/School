@@ -1,4 +1,5 @@
 <?php session_start();
+$message = '';
 ?>
 <html>
 <head>
@@ -14,10 +15,10 @@
 <?php
 function db_initialization()
 {
-    $servername = '127.0.0.1';
-    $username = 'root';
-    $password = 'root';
-    $db = 'john_mayer';
+    $servername = '10.3.0.115';
+    $username = 'h07_bas';
+    $password = 'pom1pom2';
+    $db = 'h07_johnmayer';
     global $connection;
     // Maakt verbinding
     $connection = new mysqli($servername, $username, $password, $db);
@@ -27,7 +28,42 @@ function db_initialization()
         die('Connection failed: ' . mysqli_connect_error());
     }
 }
+// Checks if you've filled in a username and password
+if (isset($_POST['username'], $_POST['password'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    if ($username == '' || $password == '') {
+        $message = 'Username or password is empty';
+    } else {
+        db_initialization();
+        $query = "SELECT * FROM `users` WHERE username='$username' AND password = '$password'";
 
+        $result = mysqli_query($connection, $query);
+        if (!$result) {
+            printf("Error: %s\n", mysqli_error($connection));
+            exit();
+        }
+
+        $row = mysqli_fetch_array($result);
+
+        if (!$row) {
+            echo 'Invalid username/password please try again';
+            $logged_in = 'false';
+            $_POST['logged_in'] = $logged_in;
+        } else {
+            $message = 'Log in successfull';
+            global $logged_in;
+            $logged_in = 'true';
+            $_SESSION['name'] = $username;
+            $_SESSION['logged_in'] = $logged_in;
+            if ($username == 'troycarter@hotmail.com') {
+                echo "<meta http-equiv='refresh' content='0;url=admin.php'>";
+            } else {
+                echo "<meta http-equiv='refresh' content='0;url=index.php'>";
+            }
+        }
+    }
+}
 ?>
 <a href="index.php"><button class="btn waves-effect waves-light" type="button" name="action">Home
     </button></a>
@@ -44,42 +80,7 @@ function db_initialization()
                     <label for="password">Wachtwoord</label>
                 </div>
                 <?php
-                // Checks if you've filled in a username and password
-                if (isset($_POST['username'], $_POST['password'])) {
-                    $username = $_POST['username'];
-                    $password = $_POST['password'];
-                    if ($username == '' || $password == '') {
-                        echo 'Username or password is empty';
-                    } else {
-                        db_initialization();
-                        $query = "SELECT * FROM `users` WHERE username='$username' AND password = '$password'";
-
-                        $result = mysqli_query($connection, $query);
-                        if (!$result) {
-                            printf("Error: %s\n", mysqli_error($connection));
-                            exit();
-                        }
-
-                        $row = mysqli_fetch_array($result);
-
-                        if (!$row) {
-                            echo 'Invalid username/password please try again';
-                            $logged_in = 'false';
-                            $_POST['logged_in'] = $logged_in;
-                        } else {
-                            echo 'Log in successfull';
-                            global $logged_in;
-                            $logged_in = 'true';
-                            $_SESSION['name'] = $username;
-                            $_SESSION['logged_in'] = $logged_in;
-                            if ($username == 'troycarter@hotmail.com') {
-                                echo "<meta http-equiv='refresh' content='0;url=admin.php'>";
-                            } else {
-                                echo "<meta http-equiv='refresh' content='0;url=index.php'>";
-                            }
-                        }
-                    }
-                }
+                echo $message;
                 ?>
                 <div class="input-field col s12">
                     <button class="left-align btn waves-effect waves-light" type="submit" name="action">Inloggen

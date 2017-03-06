@@ -14,10 +14,10 @@
 // Maakt verbinding met de database
 function db_initialization()
 {
-    $servername = '127.0.0.1';
-    $username = 'root';
-    $password = 'root';
-    $db = 'john_mayer';
+    $servername = '10.3.0.115';
+    $username = 'h07_bas';
+    $password = 'pom1pom2';
+    $db = 'h07_johnmayer';
     global $connection;
     // Maakt verbinding
     $connection = new mysqli($servername, $username, $password, $db);
@@ -33,20 +33,30 @@ $class = '';
 if (isset($_POST['username'], $_POST['password'], $_POST['confirm_password'])) {
     // Controleerd of er ook daadwerkelijk data in de velden staan
         if (empty($_POST['username']) || empty($_POST['password']) || empty($_POST['confirm_password'])) {
-        $data = 'Please fill in all fields';
+        $data = 'Vul alle velden in';
         $class = 'validate invalid';
     } else {
-        // Controleerd of de
+        // Controleerd of de wachtwoorden gelijk zijn
         if ($_POST['confirm_password'] === $_POST['password']) {
+            db_initialization();
             $username = $_POST['username'];
             $password =  $_POST['password'];
-            db_initialization();
-            $query = "INSERT INTO `users` (`id`, `username`, `password`) VALUES (NULL, '$username', '$password')";
-            mysqli_query($connection, $query);
-            $_SESSION['logged_in'] = 'true';
-            echo "<meta http-equiv='refresh' content='0;url=index.php'>";
+            $query = "SELECT * FROM `users` WHERE username = '$username'";
+            $result = mysqli_query($connection, $query);
+            if(mysqli_num_rows($result)>=1)
+            {
+                $data = 'Naam is al geregistreerd';
+                $class= 'validate invalid';
+            }
+            else {
+                $query = "INSERT INTO `users` (`id`, `username`, `password`) VALUES (NULL, '$username', '$password')";
+                mysqli_query($connection, $query);
+                $_SESSION['logged_in'] = 'true';
+                $_SESSION['username'] = $username;
+                //echo "<meta http-equiv='refresh' content='0;url=index.php'>";
+            }
         } else {
-            $data = 'Passwords do not match';
+            $data = 'Wachtwoorden zijn niet gelijk';
             $class = 'validate invalid';
         }
     }
@@ -60,7 +70,7 @@ if (isset($_POST['username'], $_POST['password'], $_POST['confirm_password'])) {
             <div class="login-box">
                 <div class="input-field col s12">
                     <input name="username" id="username" type="email" class="validate">
-                    <label for="username" data-error="Invalid" data-success="Correct">E-mail Address</label>
+                    <label for="username" data-error="<?php ?>">E-mailadres</label>
                 </div>
                 <div class="input-field col s12">
                     <input name="password" id="password" type="password">
@@ -68,7 +78,7 @@ if (isset($_POST['username'], $_POST['password'], $_POST['confirm_password'])) {
                 </div>
                 <div class="input-field col s12">
                     <input name="confirm_password" id="confirm_password" type="password" class="<?php echo $class; ?>">
-                    <label for="confirm_password" data-error="<?php echo $data; ?>">Verifiër Wachtwoord</label>
+                    <label for="confirm_password" data-error="<?php echo $data; ?>">Herhaal Wachtwoord</label>
                     <div class="row"></div>
                 </div>
                 <div class="center-align input-field col s12">

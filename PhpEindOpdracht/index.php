@@ -2,6 +2,20 @@
 if(isset($_SESSION['logged_in']))
 {}
 else{$_SESSION['logged_in'] = 'false';}
+$message = '';
+if (isset($_POST['place'], $_POST['name'], $_POST['date'], $_POST['time'])) {
+    $place = ($_POST['place'] ? $_POST['place'] : 'Unknown');
+    $name = ($_POST['name'] ? $_POST['name'] : 'Unknown');
+    $date = ($_POST['date'] ? $_POST['date'] : NULL);
+    $time = ($_POST['time'] ? $_POST['time'] : NULL);
+    db_initialization();
+    $sqliquery = "INSERT INTO `women` (`Sgtnr`, `Plaats`, `Vriendin`, `Datum`, `Tijd`) VALUES (NULL, '$place', '$name', '$date', '$time')";
+    if ($_SESSION['logged_in'] == 'true') {
+        mysqli_query($connection, $sqliquery);
+    } else {
+        $message = "U bent niet ingelogd of er is iets mis met de server";
+    }
+}
 ?>
 <!DOCTYPE html>
 
@@ -24,10 +38,10 @@ $connection;
 // Maakt verbinding met de database
 function db_initialization()
 {
-    $servername = '127.0.0.1';
-    $username = 'root';
-    $password = 'root';
-    $db = 'john_mayer';
+    $servername = '10.3.0.115';
+    $username = 'h07_bas';
+    $password = 'pom1pom2';
+    $db = 'h07_johnmayer';
     global $connection;
     // Maakt verbinding
     $connection = new mysqli($servername, $username, $password, $db);
@@ -44,10 +58,7 @@ function db_initialization()
 <a class="btn waves-effect waves-light" href="login.php" name="action">Inloggen</a>
 <div class="container">
     <div class="row">
-        <h6>Welkom op de date pagina van john mayer, hier kunt u de 5 meest recente datings partners zien van hem</h6>
-    </div>
-    <div class="row">
-        <h5>Daarmee is john nu aan het daten</h5>
+        <h5>Tabel</h5>
         <table class="bordered col s8">
             <thead>
             <tr>
@@ -103,20 +114,7 @@ function db_initialization()
                     </button>
                 </div>
                 <?php
-                if (isset($_POST['place'], $_POST['name'], $_POST['date'], $_POST['time'])) {
-                    $place = ($_POST['place'] ? $_POST['place'] : 'Unknown');
-                    $name = ($_POST['name'] ? $_POST['name'] : 'Unknown');
-                    $date = ($_POST['date'] ? $_POST['date'] : NULL);
-                    $time = ($_POST['time'] ? $_POST['time'] : NULL);
-                    $sqliquery = "INSERT INTO `women` (`Sgtnr`, `Plaats`, `Vriendin`, `Datum`, `Tijd`) VALUES (NULL, '$place', '$name', '$date', '$time')";
-                    if ($_SESSION['logged_in'] == 'true') {
-                        mysqli_query($connection, $sqliquery);
-                        echo 'Inserted successfully';
-                        echo "<meta http-equiv='refresh' content='0;url=admin.php'>";
-                    } else {
-                        echo "U bent niet ingelogd of er is iets mis met de server";
-                    }
-                }
+                    echo $message;
                 ?>
             </div>
         </form>
