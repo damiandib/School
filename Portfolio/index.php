@@ -44,8 +44,18 @@
     </div>
 </div>
 <div class=" parallax-container">
-    <div class="parallax"><img src="images/beverwijk1jpg.jpg"></div>
+    <div class="parallax"><img src="images/beverwijk1.jpg"></div>
 </div>
+<footer class="page-footer teal lighter-1">
+    <div class="container">
+        <div class="row">
+            <div class="col s6">
+                <h5 class="white-text">Test text</h5>
+                <p class="white-text">even more text</p>
+            </div>
+        </div>
+    </div>
+</footer>
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
