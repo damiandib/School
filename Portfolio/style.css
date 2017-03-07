@@ -1,3 +1,10 @@
 .parallax-container{
     height: 350px;
 }
+.page-footer {
+    height: 135px;
+}
+.circle{
+    height: 250px;
+    width: 250px;
+}
