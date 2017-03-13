@@ -8,3 +8,12 @@
     height: 250px;
     width: 250px;
 }
+.document{
+    height: 600px;
+    width: 400px;
+    background-color: #26a69a;
+    border-radius: 15px;
+}
+.white-space{
+    height:25px;
+}

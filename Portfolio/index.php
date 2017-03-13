@@ -14,7 +14,7 @@
 </head>
 <body>
 <nav>
-    <div class="nav-wrapper teal lighter-1">
+    <div class="nav-wrapper teal lighten-1">
         <a href="index.php" class="brand-logo center">Portfolio</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="cv.php">CV</a></li>
@@ -26,13 +26,13 @@
 <div class="parallax-container">
     <div class="parallax"><img src="images/novacollege1.jpg"></div>
 </div>
-<div class="section teal lighter-1 white-text">
+<div class="section teal lighten-1 white-text">
     <div class="row container">
         <h2 class="header">Introductie</h2>
     </div>
     <div class="row container">
         <p class="col s8">
-            
+
         </p>
         <img class="circle" src="images/empty.png">
     </div>
@@ -40,7 +40,7 @@
 <div class=" parallax-container">
     <div class="parallax"><img src="images/beverwijk1.jpg"></div>
 </div>
-<footer class="page-footer teal lighter-1">
+<footer class="page-footer teal lighten-1">
     <div class="container">
         <div class="row">
             <div class="col s6">

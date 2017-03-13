@@ -1,0 +1,77 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Mar 13, 2017, 9:53:19 AM
+    Author     : dijks
+*/
+iframe{
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.page-div{
+    height: 800px;
+    background-color: rgba(0,0,0,0.4) !important;
+    position: relative;
+}
+
+.nav-extended{
+    background-color: rgba(0,0,0,0.4) !important;
+}
+
+.background-image{
+    background-image: url("images/Background.jpg");
+    background-size: cover;
+}
+
+.brand-logo{
+    height: 85px;   
+}
+
+.red-text{
+    font-weight: 900 !important;
+}
+
+.media-links{
+    height: 95px;
+    width: 160px;
+}
+
+.page-footer{
+    background-color: rgba(255, 3, 1, 0.95) !important;
+}
+
+.home-body{
+    font-family: 'Ubuntu', sans-serif;
+    background-color: transparent;
+}
+
+.page-black{
+    background-color: rgba(15,15,15,0.95);
+}
+
+.page-red{
+    background-color: rgba(255, 3, 1, 0.95);
+}
+
+.page-white{
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.logo{
+    width: 750px !important;
+    height:150px !important;
+}
+
+.indicator-item.active{
+    background-color: rgba(255, 3, 1, 0.95) !important;
+}
+
+.spacer{
+    height: 100px;
+}
+
