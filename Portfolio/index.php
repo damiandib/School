@@ -32,7 +32,7 @@
     </div>
     <div class="row container">
         <p class="col s8">
-            
+
         </p>
         <img class="circle" src="images/empty.png">
     </div>
