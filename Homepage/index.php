@@ -24,9 +24,9 @@ and open the template in the editor.
                     <a href="#" data-activates="mobile-nav" class="button-collapse"><i
                                 class="material-icons">menu</i></a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down z-index-1">
-                        <li><a class="text-red" href="https://7thinfantrybrigade.org/index.php">Forums</a></li>
-                        <li><a class="text-red" href="https://7thinfantrybrigade.org/orbat.php">ORBAT</a></li>
-                        <li><a class="text-red" href="https://7thinfantrybrigade.org/portal.php">News</a></li>
+                        <li><a class="text-header-red" href="https://7thinfantrybrigade.org/index.php">Forums</a></li>
+                        <li><a class="text-header-red" href="https://7thinfantrybrigade.org/memberlist.php">ORBAT</a></li>
+                        <li><a class="text-header-red" href="https://7thinfantrybrigade.org/portal.php">News</a></li>
                     </ul>
                     <ul class="side-nav" id="mobile-nav">
                         <li><a href="https://7thinfantrybrigade.org/orbat.php">ORBAT</a></li>
@@ -36,15 +36,19 @@ and open the template in the editor.
                 </div>
                 <div class="nav-content">
                     <ul class="tabs tabs-transparent">
-                        <li class="tab"><a class="text-red" href="#Homepage">Home</a></li>
-                        <li class="tab"><a class="text-red" href="#Media">Media</a></li>
-                        <li class="tab"><a class="text-red" href="#Join">Join</a></li>
+                        <li class="tab"><a class="text-header-red" href="#Homepage">Home</a></li>
+                        <li class="tab"><a class="text-header-red" href="#About">About us</a></li>
+                        <li class="tab"><a class="text-header-red" href="#Media">Media</a></li>
+                        <li class="tab"><a class="text-header-red" href="#Join">Join</a></li>
                     </ul>
                 </div>
             </nav>
 
             <div id="Homepage" class="page-div">
                 <iframe class="style-1" frameborder="0" src="home.php"></iframe>
+            </div>
+            <div id="About" class="page-div">
+                <iframe class="style-1" frameborder="0" src="about.php"></iframe>
             </div>
             <div id="Media" class="page-div">
                 <iframe class="style-1" frameborder="0" src="media.php"></iframe>

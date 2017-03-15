@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
     </head>
     <body class="white-text">
-        <h5 class="valign-wrapper text-red"> <i class="small material-icons">theaters</i>&nbsp;| Media</h5>
+        <h5 class="valign-wrapper text-header-red"> <i class="small material-icons">theaters</i>&nbsp;| Media</h5>
         <div class="container">
             <div class="row">
                 <div class="col l4 s12">
@@ -29,7 +29,7 @@
         </div>
         <div class="spacer"></div>
         <div class="row">
-            <h5 class="valign-wrapper text-red"> <i class="small material-icons">surround_sound</i>&nbsp;| Gallery</h5>
+            <h5 class="valign-wrapper text-header-red"> <i class="small material-icons">surround_sound</i>&nbsp;| Gallery</h5>
             <div class="col l2 s6">
                 <img class="materialboxed" width="100%" src="images/Foto1.png">
             </div>

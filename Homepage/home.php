@@ -2,6 +2,11 @@
 <html>
 <head>
     <title></title>
+    <style>
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
     <link href="stylesheet.css" type="text/css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
@@ -19,17 +24,20 @@
                 </li>
                 <li>
                     <img class="col s12" src="images/image2.jpg">
-                    <div class="caption left-align">
-                        <h3>Test</h3>
-                        <h5>Another line test</h5>
+                    <div class="caption left-align text-white">
+                        <h2>Our playerbase</h2>
+                        <h5>Consists out of 30+ players</h5>
                     </div>
                 </li>
                 <li>
                     <img class="col s12" src="images/image3.jpg">
-                    <div class="caption right-align">
-                        <h3>And the best part is:</h3>
-                        <h5>We also shoot trees.</h5>
+                    <div class="caption right-align text-whiet">
+                        <h2>Weekly Operations</h2>
+                        <h5>PvE/PvP and more</h5>
                     </div>
+                </li>
+                <li>
+                    <img class="col s12" src=""
                 </li>
             </ul>
         </div>
@@ -39,22 +47,16 @@
     <div class="col s12">
         <div class="page-white">
             <h2 class="header center-align">Introduction</h2>
-            <p class="p-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
-                dolor.
-                Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                Donec
-                quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec
-                pede
-                justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a,
-                venenatis
-                vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus
-                elementum
-                semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae,
-                eleifend
-                ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut
-                metus
-                varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper
-                ultricies nisi. Nam eget dui.</p>
+            <p class="p-text">7th Infantry Brigade was founded in January 2017 by a group of like minded friends that
+                strive to provide fun and atmospheric events for realism players however, this isn't your typical
+                realism as there is no need of a "Yes, Sir!" "No, Sir!". As we aim to emulate the 7th Infantry Brigade,
+                we follow the British Army structure and fit it to work in Arma. Doing our best to try and find the
+                balance between realism and fun, utilising real life tactics and equipment to achieve realistic tasks,
+                we hope that everyone that attends any of our events enjoys themselves whilst also using skills and
+                knowledge based on the real British Army but tweaked to fit Arma. We run our main Operation on Saturday
+                at 2000 GMT+0, and we have an ALiVE Server up 24/7 for those that enjoy playing Arma throughout the
+                week. If you are interested in joining us or want to know more about 7th Infantry Brigade, feel free to
+                come on our Teamspeak and have a chat with one of our members.</p>
         </div>
     </div>
 </div>
