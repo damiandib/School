@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="9528af8a-54fe-436c-8330-dc9f805a7828" name="DDibbets Vilayer" url="http://www.ddibbets.vilayer.me">
+        <fileTransfer host="ftp.ddibbets.vilayer.me" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
