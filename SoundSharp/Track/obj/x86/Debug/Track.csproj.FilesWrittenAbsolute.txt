@@ -1,0 +1,5 @@
+/home/dibz/Documents/Projects/SoundSharp/Track/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/dibz/Documents/Projects/SoundSharp/Track/bin/Debug/Track.exe.mdb
+/home/dibz/Documents/Projects/SoundSharp/Track/bin/Debug/Track.exe
+/home/dibz/Documents/Projects/SoundSharp/Track/obj/x86/Debug/Track.exe
+/home/dibz/Documents/Projects/SoundSharp/Track/obj/x86/Debug/Track.exe.mdb

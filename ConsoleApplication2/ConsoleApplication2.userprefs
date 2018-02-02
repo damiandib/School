@@ -1,0 +1,13 @@
+﻿<Properties StartupItem="ConsoleApplication2/ConsoleApplication2.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ConsoleApplication2/Program.cs">
+    <Files>
+      <File FileName="ConsoleApplication2/Program.cs" Line="227" Column="96" />
+      <File FileName="ConsoleApplication2/Mp3.cs" Line="26" Column="3" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

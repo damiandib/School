@@ -1,0 +1,18 @@
+c:\users\damia\onedrive\documents\visual studio 2013\Projects\ConsoleApplication2\ConsoleApplication2\bin\Debug\ConsoleApplication2.exe.config
+c:\users\damia\onedrive\documents\visual studio 2013\Projects\ConsoleApplication2\ConsoleApplication2\bin\Debug\ConsoleApplication2.exe
+c:\users\damia\onedrive\documents\visual studio 2013\Projects\ConsoleApplication2\ConsoleApplication2\bin\Debug\ConsoleApplication2.pdb
+c:\users\damia\onedrive\documents\visual studio 2013\Projects\ConsoleApplication2\ConsoleApplication2\obj\Debug\ConsoleApplication2.csprojResolveAssemblyReference.cache
+c:\users\damia\onedrive\documents\visual studio 2013\Projects\ConsoleApplication2\ConsoleApplication2\obj\Debug\ConsoleApplication2.exe
+c:\users\damia\onedrive\documents\visual studio 2013\Projects\ConsoleApplication2\ConsoleApplication2\obj\Debug\ConsoleApplication2.pdb
+C:\Users\Damian\Documents\School\ConsoleApplication2\ConsoleApplication2\obj\Debug\ConsoleApplication2.csprojResolveAssemblyReference.cache
+C:\Users\Damian\Documents\School\ConsoleApplication2\ConsoleApplication2\obj\Debug\ConsoleApplication2.exe
+C:\Users\Damian\Documents\School\ConsoleApplication2\ConsoleApplication2\obj\Debug\ConsoleApplication2.pdb
+C:\Users\Damian\Documents\School\ConsoleApplication2\ConsoleApplication2\bin\Debug\ConsoleApplication2.exe.config
+C:\Users\Damian\Documents\School\ConsoleApplication2\ConsoleApplication2\bin\Debug\ConsoleApplication2.exe
+C:\Users\Damian\Documents\School\ConsoleApplication2\ConsoleApplication2\bin\Debug\ConsoleApplication2.pdb
+C:\Users\Damian\Documents\School\ConsoleApplication2\ConsoleApplication2\bin\Debug\mscorlib.dll
+C:\Users\Damian\Documents\School\ConsoleApplication2\ConsoleApplication2\bin\Debug\normidna.nlp
+C:\Users\Damian\Documents\School\ConsoleApplication2\ConsoleApplication2\bin\Debug\normnfc.nlp
+C:\Users\Damian\Documents\School\ConsoleApplication2\ConsoleApplication2\bin\Debug\normnfd.nlp
+C:\Users\Damian\Documents\School\ConsoleApplication2\ConsoleApplication2\bin\Debug\normnfkc.nlp
+C:\Users\Damian\Documents\School\ConsoleApplication2\ConsoleApplication2\bin\Debug\normnfkd.nlp

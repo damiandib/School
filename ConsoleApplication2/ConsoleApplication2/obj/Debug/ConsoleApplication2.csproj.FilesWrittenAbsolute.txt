@@ -1,0 +1,6 @@
+/home/dibz/Documents/Projects/ConsoleApplication2/ConsoleApplication2/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/dibz/Documents/Projects/ConsoleApplication2/ConsoleApplication2/bin/Debug/ConsoleApplication2.exe.config
+/home/dibz/Documents/Projects/ConsoleApplication2/ConsoleApplication2/bin/Debug/ConsoleApplication2.exe.mdb
+/home/dibz/Documents/Projects/ConsoleApplication2/ConsoleApplication2/bin/Debug/ConsoleApplication2.exe
+/home/dibz/Documents/Projects/ConsoleApplication2/ConsoleApplication2/obj/Debug/ConsoleApplication2.exe
+/home/dibz/Documents/Projects/ConsoleApplication2/ConsoleApplication2/obj/Debug/ConsoleApplication2.exe.mdb
